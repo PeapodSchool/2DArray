@@ -40,7 +40,7 @@ int main() {
 	cout << "Row index with max average: " << index1 + 1 << endl;
 
 	// img task
-	int size3 = 9;
+	int size3 = 6;
 	int** matrix3 = formMatrix(size3, size3);
 	fillMatrix(matrix3, size3, size3);
 	cout << "Martix: " << endl;
@@ -128,7 +128,23 @@ void fillNull(int** matrix, int n, int m)
 {
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
-			if (i < n / 2 && (j >= i && j < n - i)) {
+			// picture 5 
+
+			//if (i < n / 2 && (j >= i && j <= n - 1- i)) {
+			//	matrix[i][j] = 0;
+			//}
+			//else if (i >= n / 2 && (j >= n - 1 - i
+			//	&& j <= i)){
+			//	matrix[i][j] = 0;
+			//}
+
+			// picture 6
+
+			if (j < n / 2 && (j <= i && j <= n - 1 - i)) {
+				matrix[i][j] = 0;
+			}
+			else if (j >= n / 2 && (j <= n - 1 - i
+				&& j >= i)) {
 				matrix[i][j] = 0;
 			}
 		}
